@@ -12,6 +12,8 @@
     $users_data = $selectUsers->fetchAll();
 ?>
 
+<?php include("header.php")?>
+
 <style>
     table{
         border:1px solid black; 
@@ -109,3 +111,7 @@
         </main>
     </div>
 </div>
+
+<?php
+    include("footer.php");
+?>

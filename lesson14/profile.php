@@ -1,9 +1,12 @@
 <?php
+    session_start();
+
     include_once('config.php');
 
     if(empty($_SESSION['username'])){
         header('Location: login.php');
     }
+
     $id = $_GET['id'];
     $sql = "SELECT * from users WHERE id=:id";
     $selectUsers = $conn->prepare($sql);
@@ -12,6 +15,8 @@
 
     $users_data = $selectUsers->fetch();
 ?>
+     
+     <?php include("header.php");?>
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Welcome, <i><?php echo $_SESSION['username'];?></i></a>
@@ -77,3 +82,5 @@
             </div>
     </div>
 </div>
+
+   <?php include("footer.php");?>
