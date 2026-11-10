@@ -10,14 +10,17 @@
    $selectMovies = $conn->prepare($sql);
    $selectMovies->execute();
    $movies_data = $selectMovies->fetchAll();
-?>
+
+
+
+ ?>
 
  <!DOCTYPE html>
  <html>
  <head>
  	<title>Home</title>
  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
@@ -57,7 +60,7 @@
         <strong>Album</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <a href="dashboard.php"><span class="navbar-toggler-icon"></span></a>
       </button>
     </div>
   </div>
@@ -66,11 +69,11 @@
  	<section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Movie Catalog</h1>
-        <p class="lead text-muted">Explore our collection of available movies and book your tickets today.</p>
+        <h1 class="fw-light">Album example</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         <p>
-          <a href="dashboard.php" class="btn btn-primary my-2">Dashboard</a>
-          <a href="logout.php" class="btn btn-secondary my-2">Sign Out</a>
+          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
         </p>
       </div>
     </div>
@@ -78,28 +81,42 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
+
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
       	<?php foreach ($movies_data as $movie_data) { ?>
+
       	<div class="col">
           <div class="card shadow-sm">
-            <img src="movie_images/<?php echo htmlspecialchars($movie_data['movie_image']); ?>" height="350" style="object-fit: cover;">
+
+            <img src="movie_images/<?php echo $movie_data['movie_image'];  ?>" height="350">
+
             <div class="card-body">
-              <h4><?php echo htmlspecialchars($movie_data['movie_name']); ?></h4>
-              <p class="card-text"><?php echo htmlspecialchars($movie_data['movie_desc']); ?></p>
+              <h4><?php echo $movie_data['movie_name']; ?></h4>
+              <p class="card-text"><?php echo $movie_data['movie_desc']; ?></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="details.php?id=<?php echo $movie_data['id']; ?>" class="btn btn-sm btn-outline-secondary">View</a>
-                  <a href="edit.php?id=<?php echo $movie_data['id']; ?>" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a href="details.php?id=<?php echo $movie_data['id']; ?>"  class="btn btn-sm btn-outline-secondary" >View</a>
+                  <a href="edit.php?id=<?php echo $movie_data['id']; ?>"  class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
-                <small class="text-muted">Rating: <?php echo htmlspecialchars($movie_data['movie_rating']); ?></small>
-                <small class="text-muted"><?php echo htmlspecialchars($movie_data['movie_quality']); ?></small>
+                <small class="text-muted">Rating: <?php echo $movie_data['movie_rating']; ?></small>
+                <small class="text-muted"><?php echo $movie_data['movie_quality']; ?></small>
               </div>
             </div>
           </div>
         </div>
-      <?php } ?>
+      		
+      <?php	} ?>
+   
+       
+
+        
       </div>
     </div>
   </div>
-</body>
-</html>
+
+  
+
+
+ </body>
+ </html>

@@ -104,11 +104,11 @@
                       <label for="floatingInput">Date</label>
                     </div>
                     <div class="form-floating">
-                      <select name="time" class="form-select">
+                      <select name="time">
                         <option value="12:00">12:00</option>
                         <option value="15:00">15:00</option>
                         <option value="17:00">17:00</option>
-                        <option value="19:00">19:00</option>
+                        <option value="19:00">19:0</option>
                       </select>
                     </div>
                     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Book</button>
@@ -117,7 +117,5 @@
             </div>
         </div>
     </div>
-   </div>
-  </div>
  </body>
  </html>
