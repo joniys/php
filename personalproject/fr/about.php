@@ -4,7 +4,7 @@ $pageTitle = 'About Us'; $active = 'about';
 require __DIR__ . '/includes/header.php'; ?>
 <section class="page-hero"><p class="eyebrow">Notre Histoire</p><h1>About Us</h1><p>Where Provence meets the Mediterranean.</p></section>
 <section class="section container split reveal">
-  <div class="split-img"><img src="images/about.svg" alt="The French Riviera coastline at sunset"></div>
+  <div class="split-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85" alt="The French Riviera coastline at sunset"></div>
   <div>
     <p class="eyebrow dark">Our Inspiration</p>
     <h2>A table by the sea</h2>

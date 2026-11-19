@@ -1,3 +1,9 @@
+Log in as admin:
+Email: admin@frenchriviera.example
+Password: admin1234
+
+
+
 # French Riviera – Restaurant Website (PHP + MySQL)
 
 ## Install with XAMPP (Windows)

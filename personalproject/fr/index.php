@@ -21,7 +21,7 @@ require __DIR__ . '/includes/header.php';
 
 <section class="island-wrap">
   <a class="island" href="menu.php" aria-label="Discover our menu">
-    <div class="island-img"><img src="images/dishes/dish-4.svg" alt="Boeuf Bourguignon served on a white plate"></div>
+    <div class="island-img"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=85" alt="Boeuf Bourguignon served on a white plate"></div>
     <div class="island-body">
       <p class="eyebrow dark">Bienvenue</p>
       <h2>Discover the Art of French Cuisine.</h2>
@@ -46,7 +46,7 @@ require __DIR__ . '/includes/header.php';
     <div class="cards three">
       <?php foreach ($featured as $f): ?>
       <a class="card" href="food.php?id=<?= (int)$f['id'] ?>">
-        <div class="card-img"><img loading="lazy" src="<?= e($f['image']) ?>" alt="<?= e($f['name']) ?>"></div>
+        <div class="card-img"><img loading="lazy" src="<?= e(dish_photo_url($f['image'], (int)$f['id'])) ?>" alt="<?= e($f['name']) ?>"></div>
         <div class="card-body"><h3><?= e($f['name']) ?></h3><p><?= e($f['short_description']) ?></p><div class="card-foot"><span class="price"><?= euro($f['price']) ?></span><span class="more">View details</span></div></div>
       </a>
       <?php endforeach; ?>

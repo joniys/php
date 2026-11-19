@@ -20,7 +20,7 @@ require __DIR__ . '/includes/header.php';
     <div class="cards">
     <?php foreach ($dishes as $d): ?>
       <a class="card" href="food.php?id=<?= (int)$d['id'] ?>">
-        <div class="card-img"><img loading="lazy" src="<?= e($d['image']) ?>" alt="<?= e($d['name']) ?>"></div>
+        <div class="card-img"><img loading="lazy" src="<?= e(dish_photo_url($d['image'], (int)$d['id'])) ?>" alt="<?= e($d['name']) ?>"></div>
         <div class="card-body"><h3><?= e($d['name']) ?></h3><p><?= e($d['short_description']) ?></p>
           <div class="card-foot"><span class="price"><?= euro($d['price']) ?></span><span class="more">View details</span></div></div>
       </a>

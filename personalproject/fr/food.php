@@ -20,7 +20,7 @@ if (!$dish): ?>
 <section class="page-hero"><h1>Dish not found</h1><p>We couldn't find that dish.</p><a class="btn btn-gold" href="menu.php">Back to Menu</a></section>
 <?php else: ?>
 <section class="detail container">
-  <div class="detail-img"><img src="<?= e($dish['image']) ?>" alt="<?= e($dish['name']) ?>"></div>
+  <div class="detail-img"><img src="<?= e(dish_photo_url($dish['image'], (int)$dish['id'])) ?>" alt="<?= e($dish['name']) ?>"></div>
   <div class="detail-body">
     <a class="back" href="menu.php">&larr; Back to Menu</a>
     <p class="eyebrow dark"><?= e($dish['category']) ?></p>
@@ -37,7 +37,7 @@ if (!$dish): ?>
 <section class="section tinted"><div class="container"><h2 class="center">You may also enjoy</h2>
   <div class="cards three">
   <?php foreach ($related as $d): ?>
-    <a class="card" href="food.php?id=<?= (int)$d['id'] ?>"><div class="card-img"><img loading="lazy" src="<?= e($d['image']) ?>" alt="<?= e($d['name']) ?>"></div>
+    <a class="card" href="food.php?id=<?= (int)$d['id'] ?>"><div class="card-img"><img loading="lazy" src="<?= e(dish_photo_url($d['image'], (int)$d['id'])) ?>" alt="<?= e($d['name']) ?>"></div>
     <div class="card-body"><h3><?= e($d['name']) ?></h3><div class="card-foot"><span class="price"><?= euro($d['price']) ?></span><span class="more">View details</span></div></div></a>
   <?php endforeach; ?></div></div></section>
 <?php endif; endif;
